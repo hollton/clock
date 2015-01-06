@@ -1,43 +1,47 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>clock</title>
 <style>
+body{ margin:0; padding:0;}
+#clockbox{ width: 500px; margin: 0 auto;}
 li{margin:0;padding:0;list-style:none; font-size:30px;font-weight:bold;float:left;position: relative;}
-.zero{top: -432px;left: 194px;}
-.one{top: -412px;left: 242px;transform: rotate(30deg);}
-.two{top: -360px;left: 278px;transform: rotate(60deg);}
-.three{top: -289px;left: 283px;transform: rotate(90deg);}
-.four{top: -220px;left: 247px;transform: rotate(120deg);}
-.five{top: -166px;left: 178px;transform: rotate(150deg);}
-.six{top: -146px;left: 93px;transform: rotate(180deg);}
-.seven{top: -166px;left: 7px;transform: rotate(210deg);}
-.eight{top: -218px;left: -60px;transform: rotate(240deg);}
-.nine{top: -289px;left: -96px;transform: rotate(270deg);}
-.ten{top: -360px;left: -98px;transform: rotate(300deg);}
-.eleven{top: -411px;left: -80px;transform: rotate(330deg);}
+.zero{top: -429px;left: 193px;}
+.one{top: -411px;left: 242px;/*transform: rotate(30deg);*/}
+.two{top: -360px;left: 278px;/*transform: rotate(60deg);*/}
+.three{top: -286px;left: 283px;/*transform: rotate(90deg);*/}
+.four{top: -216px;left: 246px;/*transform: rotate(120deg);*/}
+.five{top: -163px;left: 178px;/*transform: rotate(150deg);*/}
+.six{top: -145px;left: 89px;/*transform: rotate(180deg);*/}
+.seven{top: -164px;left: 1px;/*transform: rotate(210deg);*/}
+.eight{top: -214px;left: -66px;/*transform: rotate(240deg);*/}
+.nine{top: -278px;left: -103px;/*transform: rotate(270deg);*/}
+.ten{top: -360px;left: -99px;/*transform: rotate(300deg);*/}
+.eleven{top: -407px;left: -85px;/*transform: rotate(330deg);*/}
 </style>
 
 </head>
 <body>
-<canvas id="clock" width="500" height="500">
-	您的浏览器还不支持HTML5，赶紧升级吧~
-</canvas>
-<ul>
-	<li class="zero">12</li>   <!--twelve-->
-	<li class="one">1</li>
-	<li class="two">2</li>
-	<li class="three">3</li>
-	<li class="four">4</li>
-	<li class="five">5</li>
-	<li class="six">6</li>
-	<li class="seven">7</li>
-	<li class="eight">8</li>
-	<li class="nine">9</li>
-	<li class="ten">10</li>
-	<li class="eleven">11</li>
-</ul>
+	<div id="clockbox">
+        <canvas id="clock" width="500" height="500">
+            您的浏览器还不支持HTML5，赶紧升级吧~
+        </canvas>
+        <ul>
+            <li class="zero">12</li><!--twelve-->
+            <li class="one">1</li>
+            <li class="two">2</li>
+            <li class="three">3</li>
+            <li class="four">4</li>
+            <li class="five">5</li>
+            <li class="six">6</li>
+            <li class="seven">7</li>
+            <li class="eight">8</li>
+            <li class="nine">9</li>
+            <li class="ten">10</li>
+            <li class="eleven">11</li>
+        </ul>
+    </div>
 
 <script>
 	function myClock(){
@@ -63,6 +67,17 @@ li{margin:0;padding:0;list-style:none; font-size:30px;font-weight:bold;float:lef
 		cxt.shadowOffsetX=2;
 		cxt.shadowOffsetY=1;
 		cxt.stroke();
+		
+		//圆标尺
+		/*cxt.beginPath();
+		cxt.arc(250,250,153,0,Math.PI*2,true);
+		cxt.closePath();
+		cxt.lineWidth=1;
+		cxt.strokeStyle='#000';
+		cxt.shadowBlur=0;
+		cxt.shadowOffsetX=0;
+		cxt.shadowOffsetY=0;
+		cxt.stroke();*/
 		
 		//分刻度
 		for(var i=0;i<60;i++){
